@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>om</title>
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.0.0/dist/css/bootstrap.min.css" integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
+  <link rel="stylesheet" href="style.css">
+  <link rel="icon" type="image/png" sizes="32x32" href="favicon.ico">
+  <link rel="icon" type="image/png" sizes="16x16" href="favicon.ico">
+</head>
+<body>
+  <header>
+    <nav class="navbar navbar-expand-lg navbar-light bg-light">
+      <a class="navbar-brand" href="#">
+        <img src="favicon.ico" width="30" height="30" class="d-inline-block align-top" alt="">
+        OrangeMetrics
+      </a>
+      <div class="collapse navbar-collapse" id="navbarNavDropdown">
+        <ul class="navbar-nav">
+          <li class="nav-item dropdown">
+            <a class="nav-link dropdown-toggle" href="#" id="navbarDropdownMenuLink" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+              Product
+            </a>
+            <div class="navbar-drop-down-menu">
+            <div class="dropdown-menu" aria-labelledby="navbarDropdownMenuLink">
+              <a class="dropdown-item" href="http://plebdashboard.com" target="_blank">Plebdashboard</a>
+            </div>
+          </div>
+          </li>
+<!--           <li class="nav-item">
+            <a class="nav-link" href="#">Blog</a>
+          </li> -->
+          <li class="nav-item">
+            <a class="nav-link" href="https://twitter.com/Soru_kumar" target="_blank">Contact</a>
+          </li>
+        </ul>
+      </div>
+      <script src="https://cdn.jsdelivr.net/npm/jquery@3.5.1/dist/jquery.slim.min.js" integrity="sha384-DfXdz2htPH0lsSSs5nCTpuj/zy4C+OGpamoFVy38MVBnE+IbbVYUew+OrCXaRkfj" crossorigin="anonymous"></script>
+      <script src="https://cdn.jsdelivr.net/npm/bootstrap@4.6.1/dist/js/bootstrap.bundle.min.js" integrity="sha384-fQybjgWLrvvRgtW6bFlB7jaZrFsaBXjsOMm/tB9LTS58ONXgqbR9W8oWht/amnpF" crossorigin="anonymous"></script>
+    </nav>
+  </header>
+  <main>
+    <section class="hero">
+      <h1>Data Product and Infrastructure <br> for Bitcoin, Lightning and adjacent technologies </h1>
+      <!-- <p><span id="dynamic-text">Lightning Graph</span> </p> -->
+      <a href="https://twitter.com/Soru_kumar" target="_blank" class="cta-button">Contact</a>
+    </section>
+  </main>
+  <script>
+    const phrases = [
+    "Lightning Graph",
+    "Routing",
+    "Liquidity Management",
+    "Onchain Privacy"
+    ];
+    let currentPhraseIndex = 0;
+
+    function updateText() {
+      document.getElementById('dynamic-text').innerText = phrases[currentPhraseIndex];
+      currentPhraseIndex = (currentPhraseIndex + 1) % phrases.length;
+    }
+
+    setInterval(updateText, 3000);
+  </script>
+</body>
+</html>
