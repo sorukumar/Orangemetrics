@@ -1,0 +1,39 @@
+<svg class="secure-reporting-animation" viewBox="0 0 300 200" xmlns="http://www.w3.org/2000/svg">
+  <style>
+    @keyframes merge {
+      0% { transform: translateX(0); }
+      50% { transform: translateX(50px); }
+      100% { transform: translateX(0); }
+    }
+    @keyframes insight {
+      0% { opacity: 0; transform: translateY(20px); }
+      100% { opacity: 1; transform: translateY(0); }
+    }
+    .merge { animation: merge 4s infinite; }
+    .insight { animation: insight 2s infinite alternate; }
+  </style>
+  
+  <!-- Web2 Social Data Box -->
+  <rect x="10" y="10" width="80" height="60" fill="#4A90E2" class="merge"/>
+  <text x="50" y="45" font-size="12" fill="white" text-anchor="middle">Web2 Social Data</text>
+  
+  <!-- Private Company Data Box -->
+  <rect x="10" y="130" width="80" height="60" fill="#FF6600" class="merge"/>
+  <text x="50" y="165" font-size="12" fill="white" text-anchor="middle">Private Company Data</text>
+  
+  <!-- Lock Icon -->
+  <path d="M40 120 h20 v-10 a10,10 0 0,0 -20,0 v10 z" fill="none" stroke="#333" stroke-width="2"/>
+  <rect x="35" y="120" width="30" height="20" fill="#333"/>
+  
+  <!-- Merge Arrow -->
+  <path d="M100 70 L150 100 L100 130" fill="none" stroke="#333" stroke-width="2"/>
+  
+  <!-- Merged Data Box -->
+  <rect x="160" y="70" width="80" height="60" fill="#66BB6A"/>
+  <text x="200" y="105" font-size="12" fill="white" text-anchor="middle">Merged Data</text>
+  
+  <!-- Insights -->
+  <text x="250" y="50" font-size="16" fill="#333" text-anchor="middle" class="insight">Insights</text>
+  <path d="M250 60 L250 80" stroke="#333" stroke-width="2" class="insight"/>
+  <path d="M240 70 L250 80 L260 70" fill="none" stroke="#333" stroke-width="2" class="insight"/>
+</svg>
