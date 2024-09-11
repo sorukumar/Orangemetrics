@@ -1,65 +1,86 @@
 <!DOCTYPE html>
-<html>
+<html lang="en">
 <head>
-  <title>om</title>
-  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.0.0/dist/css/bootstrap.min.css" integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
-  <link rel="stylesheet" href="style.css">
-  <link rel="icon" type="image/png" sizes="32x32" href="favicon.ico">
-  <link rel="icon" type="image/png" sizes="16x16" href="favicon.ico">
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Orangemetrics - Bitcoin & Lightning Network Data Solutions</title>
+    <link rel="stylesheet" href="styles.css">
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.9.1/gsap.min.js"></script>
 </head>
 <body>
-  <header>
-    <nav class="navbar navbar-expand-lg navbar-light bg-light">
-      <a class="navbar-brand" href="#">
-        <img src="favicon.ico" width="30" height="30" class="d-inline-block align-top" alt="">
-        OrangeMetrics
-      </a>
-      <div class="collapse navbar-collapse" id="navbarNavDropdown">
-        <ul class="navbar-nav">
-          <li class="nav-item dropdown">
-            <a class="nav-link dropdown-toggle" href="#" id="navbarDropdownMenuLink" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-              Product
-            </a>
-            <div class="navbar-drop-down-menu">
-            <div class="dropdown-menu" aria-labelledby="navbarDropdownMenuLink">
-              <a class="dropdown-item" href="http://plebdashboard.com" target="_blank">Plebdashboard</a>
+    <header>
+        <nav class="container">
+            <div class="logo">Orangemetrics</div>
+            <ul class="nav-links">
+                <li class="dropdown">
+                    <a href="#" class="dropbtn">Products</a>
+                    <div class="dropdown-content">
+                        <a href="#self-service">Self-Service Reporting</a>
+                        <a href="#open-source">Open Source Projects</a>
+                        <a href="#secure-reporting">Secure Private Reporting</a>
+                    </div>
+                </li>
+                <li><a href="#about">About</a></li>
+                <li><a href="#contact">Contact</a></li>
+            </ul>
+        </nav>
+    </header>
+
+    <main>
+        <section class="hero">
+            <div class="hero-content container">
+                <h1>Empowering Bitcoin & Lightning Network Analytics</h1>
+                <p>Orangemetrics provides cutting-edge data products and infrastructure for Bitcoin, Lightning Network, and adjacent technologies.</p>
+                <a href="#products" class="cta-button">Explore Our Solutions</a>
             </div>
-          </div>
-          </li>
-<!--           <li class="nav-item">
-            <a class="nav-link" href="#">Blog</a>
-          </li> -->
-          <li class="nav-item">
-            <a class="nav-link" href="https://twitter.com/Soru_kumar" target="_blank">Contact</a>
-          </li>
-        </ul>
-      </div>
-      <script src="https://cdn.jsdelivr.net/npm/jquery@3.5.1/dist/jquery.slim.min.js" integrity="sha384-DfXdz2htPH0lsSSs5nCTpuj/zy4C+OGpamoFVy38MVBnE+IbbVYUew+OrCXaRkfj" crossorigin="anonymous"></script>
-      <script src="https://cdn.jsdelivr.net/npm/bootstrap@4.6.1/dist/js/bootstrap.bundle.min.js" integrity="sha384-fQybjgWLrvvRgtW6bFlB7jaZrFsaBXjsOMm/tB9LTS58ONXgqbR9W8oWht/amnpF" crossorigin="anonymous"></script>
-    </nav>
-  </header>
-  <main>
-    <section class="hero">
-      <h1>Data Product and Infrastructure <br> for Bitcoin, Lightning and adjacent technologies </h1>
-      <!-- <p><span id="dynamic-text">Lightning Graph</span> </p> -->
-      <a href="https://twitter.com/Soru_kumar" target="_blank" class="cta-button">Contact</a>
-    </section>
-  </main>
-  <script>
-    const phrases = [
-    "Lightning Graph",
-    "Routing",
-    "Liquidity Management",
-    "Onchain Privacy"
-    ];
-    let currentPhraseIndex = 0;
+            <div class="animation-container">
+                <svg id="data-animation" width="100%" height="100%" viewBox="0 0 800 400">
+                    <defs>
+                        <filter id="glow">
+                            <feGaussianBlur stdDeviation="2.5" result="coloredBlur"/>
+                            <feMerge>
+                                <feMergeNode in="coloredBlur"/>
+                                <feMergeNode in="SourceGraphic"/>
+                            </feMerge>
+                        </filter>
+                    </defs>
+                    <path id="bitcoin-logo" d="M300,200 L300,200 L300,200 L300,200 L300,200" stroke="#FF9900" stroke-width="3" fill="none"/>
+                    <path id="lightning-bolt" d="M500,100 L500,100 L500,100 L500,100" stroke="#4A90E2" stroke-width="3" fill="none"/>
+                    <g id="data-points"></g>
+                    <g id="network-lines"></g>
+                </svg>
+            </div>
+        </section>
 
-    function updateText() {
-      document.getElementById('dynamic-text').innerText = phrases[currentPhraseIndex];
-      currentPhraseIndex = (currentPhraseIndex + 1) % phrases.length;
-    }
+        <section id="self-service" class="product-section">
+            <div class="container">
+                <h2>Self-Service Reporting Platform</h2>
+                <p>Create custom reports on Lightning and Bitcoin technologies with our intuitive platform. Analyze trends, visualize data, and gain valuable insights to drive your business forward.</p>
+            </div>
+        </section>
 
-    setInterval(updateText, 3000);
-  </script>
+        <section id="open-source" class="product-section">
+            <div class="container">
+                <h2>Open Source Projects</h2>
+                <p>Explore our community-driven initiatives: Plebdashboard for Lightning Network visualization and LightningDS for advanced data science. Contribute, learn, and leverage these powerful tools for your projects.</p>
+            </div>
+        </section>
+
+        <section id="secure-reporting" class="product-section">
+            <div class="container">
+                <h2>Secure Private Reporting</h2>
+                <p>Bring your own data, cross-check with our Web 2 data, and generate powerful insights. Our secure platform ensures your sensitive information remains protected while providing comprehensive analytics capabilities.</p>
+            </div>
+        </section>
+    </main>
+
+    <footer>
+        <div class="container">
+            <p>&copy; 2024 Orangemetrics. All rights reserved.</p>
+        </div>
+    </footer>
+
+    <script src="animations.js"></script>
+    <script src="main.js"></script>
 </body>
 </html>
