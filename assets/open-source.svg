@@ -1,33 +1,49 @@
 <svg class="open-source-animation" viewBox="0 0 300 200" xmlns="http://www.w3.org/2000/svg">
+  <!-- Central hub representing open source -->
+  <circle cx="150" cy="100" r="40" fill="#F7931A" class="hub"/>
+  <text x="150" y="105" font-size="12" fill="#FFFFFF" text-anchor="middle">Open Source</text>
+  
+  <!-- Project nodes -->
+  <circle cx="50" cy="100" r="30" fill="#4A90E2" class="node"/>
+  <circle cx="250" cy="100" r="30" fill="#66BB6A" class="node"/>
+  <circle cx="150" cy="30" r="30" fill="#FF6600" class="node"/>
+  
+  <!-- Connecting lines -->
+  <line x1="90" y1="100" x2="110" y2="100" stroke="#333" stroke-width="2" class="link"/>
+  <line x1="190" y1="100" x2="220" y2="100" stroke="#333" stroke-width="2" class="link"/>
+  <line x1="150" y1="60" x2="150" y2="70" stroke="#333" stroke-width="2" class="link"/>
+  
+  <!-- Project labels -->
+  <text x="50" y="105" font-size="10" fill="#FFFFFF" text-anchor="middle">Plebdashboard</text>
+  <text x="250" y="105" font-size="10" fill="#FFFFFF" text-anchor="middle">LightningDS</text>
+  <text x="150" y="35" font-size="10" fill="#FFFFFF" text-anchor="middle">Bitcoin is</text>
+  <text x="150" y="48" font-size="10" fill="#FFFFFF" text-anchor="middle">Beautiful</text>
+  
+  <!-- Lightning bolt -->
+  <path d="M140,170 L160,170 L150,190 Z" fill="#F7931A" class="lightning"/>
+  
+  <!-- Bitcoin symbol -->
+  <text x="150" y="165" font-size="24" fill="#F7931A" text-anchor="middle">₿</text>
+  
+  <!-- Animation for the connecting lines -->
   <style>
-    @keyframes pulse {
-      0% { r: 5; }
-      50% { r: 8; }
-      100% { r: 5; }
-    }
     @keyframes dash {
-      to { stroke-dashoffset: 0; }
+      to {
+        stroke-dashoffset: 0;
+      }
     }
-    .node { animation: pulse 2s infinite; }
-    .link { stroke-dasharray: 20; stroke-dashoffset: 20; animation: dash 2s linear infinite; }
+    .link {
+      stroke-dasharray: 20;
+      stroke-dashoffset: 20;
+      animation: dash 1.5s linear infinite;
+    }
+    .hub {
+      animation: pulse 2s infinite;
+    }
+    @keyframes pulse {
+      0% { r: 40; }
+      50% { r: 45; }
+      100% { r: 40; }
+    }
   </style>
-  
-  <!-- Network Nodes -->
-  <circle cx="50" cy="100" r="5" fill="#4A90E2" class="node"/>
-  <circle cx="150" cy="50" r="5" fill="#4A90E2" class="node"/>
-  <circle cx="250" cy="100" r="5" fill="#4A90E2" class="node"/>
-  <circle cx="150" cy="150" r="5" fill="#4A90E2" class="node"/>
-  
-  <!-- Network Links -->
-  <line x1="50" y1="100" x2="150" y2="50" stroke="#333" stroke-width="2" class="link"/>
-  <line x1="150" y1="50" x2="250" y2="100" stroke="#333" stroke-width="2" class="link"/>
-  <line x1="250" y1="100" x2="150" y2="150" stroke="#333" stroke-width="2" class="link"/>
-  <line x1="150" y1="150" x2="50" y2="100" stroke="#333" stroke-width="2" class="link"/>
-  
-  <!-- Plebdashboard Text -->
-  <text x="150" y="180" font-size="16" fill="#333" text-anchor="middle">Plebdashboard</text>
-  
-  <!-- Open Source Symbol -->
-  <path d="M150 90 A40,40 0 0,1 190,130 L150,130 Z" fill="#66BB6A"/>
-  <path d="M150 90 A40,40 0 0,0 110,130 L150,130 Z" fill="#FF6600"/>
 </svg>
