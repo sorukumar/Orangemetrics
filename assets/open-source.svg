@@ -1,31 +1,60 @@
-<svg class="open-source-animation" viewBox="0 0 300 200" xmlns="http://www.w3.org/2000/svg">
+<svg class="open-source-animation" viewBox="0 0 400 300" xmlns="http://www.w3.org/2000/svg">
   <!-- Central hub representing open source -->
-  <circle cx="150" cy="100" r="40" fill="#F7931A" class="hub"/>
-  <text x="150" y="105" font-size="12" fill="#FFFFFF" text-anchor="middle">Open Source</text>
+  <circle cx="200" cy="150" r="50" fill="#F7931A" class="hub"/>
+  <text x="200" y="155" font-size="14" fill="#FFFFFF" text-anchor="middle">Open Source</text>
   
-  <!-- Project nodes -->
-  <circle cx="50" cy="100" r="30" fill="#4A90E2" class="node"/>
-  <circle cx="250" cy="100" r="30" fill="#66BB6A" class="node"/>
-  <circle cx="150" cy="30" r="30" fill="#FF6600" class="node"/>
+  <!-- Project rectangles -->
+  <rect x="20" y="120" width="120" height="60" rx="10" ry="10" fill="#4A90E2" class="node"/>
+  <rect x="260" y="120" width="120" height="60" rx="10" ry="10" fill="#66BB6A" class="node"/>
+  <rect x="140" y="20" width="120" height="60" rx="10" ry="10" fill="#FF6600" class="node"/>
   
   <!-- Connecting lines -->
-  <line x1="90" y1="100" x2="110" y2="100" stroke="#333" stroke-width="2" class="link"/>
-  <line x1="190" y1="100" x2="220" y2="100" stroke="#333" stroke-width="2" class="link"/>
-  <line x1="150" y1="60" x2="150" y2="70" stroke="#333" stroke-width="2" class="link"/>
+  <line x1="140" y1="150" x2="150" y2="150" stroke="#333" stroke-width="2" class="link"/>
+  <line x1="250" y1="150" x2="260" y2="150" stroke="#333" stroke-width="2" class="link"/>
+  <line x1="200" y1="80" x2="200" y2="100" stroke="#333" stroke-width="2" class="link"/>
   
   <!-- Project labels -->
-  <text x="50" y="105" font-size="10" fill="#FFFFFF" text-anchor="middle">Plebdashboard</text>
-  <text x="250" y="105" font-size="10" fill="#FFFFFF" text-anchor="middle">LightningDS</text>
-  <text x="150" y="35" font-size="10" fill="#FFFFFF" text-anchor="middle">Bitcoin is</text>
-  <text x="150" y="48" font-size="10" fill="#FFFFFF" text-anchor="middle">Beautiful</text>
+  <text x="80" y="145" font-size="12" fill="#FFFFFF" text-anchor="middle">Plebdashboard</text>
+  <text x="80" y="160" font-size="8" fill="#FFFFFF" text-anchor="middle">LN visualizer</text>
+  
+  <text x="320" y="145" font-size="12" fill="#FFFFFF" text-anchor="middle">LightningDS</text>
+  <text x="320" y="160" font-size="8" fill="#FFFFFF" text-anchor="middle">A python library for data science</text>
+  
+  <text x="200" y="50" font-size="12" fill="#FFFFFF" text-anchor="middle">Bitcoin is</text>
+  <text x="200" y="65" font-size="12" fill="#FFFFFF" text-anchor="middle">Beautiful</text>
   
   <!-- Lightning bolt -->
-  <path d="M140,170 L160,170 L150,190 Z" fill="#F7931A" class="lightning"/>
+  <path d="M190,260 L210,260 L200,280 Z" fill="#F7931A" class="lightning"/>
   
   <!-- Bitcoin symbol -->
-  <text x="150" y="165" font-size="24" fill="#F7931A" text-anchor="middle">₿</text>
-  
-  <!-- Animation for the connecting lines -->
+<!--   <text x="200" y="250" font-size="28" fill="#F7931A" text-anchor="middle">₿</text> -->
+  <g class="community">
+    <!-- Face 1 -->
+    <circle cx="50" cy="250" r="15" fill="#FFA500"/>
+    <circle cx="45" cy="245" r="3" fill="#000"/>
+    <circle cx="55" cy="245" r="3" fill="#000"/>
+    <path d="M45 255 Q50 260 55 255" fill="none" stroke="#000" stroke-width="2"/>
+
+    <!-- Face 2 -->
+    <circle cx="100" cy="270" r="15" fill="#FFA500"/>
+    <circle cx="95" cy="265" r="3" fill="#000"/>
+    <circle cx="105" cy="265" r="3" fill="#000"/>
+    <path d="M95 275 Q100 280 105 275" fill="none" stroke="#000" stroke-width="2"/>
+
+    <!-- Face 3 -->
+    <circle cx="300" cy="250" r="15" fill="#FFA500"/>
+    <circle cx="295" cy="245" r="3" fill="#000"/>
+    <circle cx="305" cy="245" r="3" fill="#000"/>
+    <path d="M295 255 Q300 260 305 255" fill="none" stroke="#000" stroke-width="2"/>
+
+    <!-- Face 4 -->
+    <circle cx="350" cy="270" r="15" fill="#FFA500"/>
+    <circle cx="345" cy="265" r="3" fill="#000"/>
+    <circle cx="355" cy="265" r="3" fill="#000"/>
+    <path d="M345 275 Q350 280 355 275" fill="none" stroke="#000" stroke-width="2"/>
+  </g>
+
+  <!-- Animation styles -->
   <style>
     @keyframes dash {
       to {
@@ -41,9 +70,16 @@
       animation: pulse 2s infinite;
     }
     @keyframes pulse {
-      0% { r: 40; }
-      50% { r: 45; }
-      100% { r: 40; }
+      0% { r: 50; }
+      50% { r: 55; }
+      100% { r: 50; }
+    }
+    .community {
+      animation: float 3s ease-in-out infinite;
+    }
+    @keyframes float {
+      0%, 100% { transform: translateY(0); }
+      50% { transform: translateY(-10px); }
     }
   </style>
 </svg>
