@@ -163,6 +163,8 @@ nav {
     padding: 2rem;
     box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
     margin-bottom: 2rem;
+    position: relative;
+    overflow: hidden;
 }
 
 .product-section h3 {
@@ -173,21 +175,40 @@ nav {
 
 .product-content {
     display: flex;
-    align-items: center;
-    gap: 2rem;
+    align-items: flex-start;
+    position: relative;
+    z-index: 1;
 }
 
 .product-description {
     flex: 1;
+    padding-right: 20px;
+}
+
+.product-description h3,
+.product-description h4,
+.product-description ul {
+    margin-left: 20px;
+}
+
+.product-description ul {
+    padding-left: 20px;
 }
 
 .product-animation {
-    flex: 1;
+    position: absolute;
+    right: -10%;
+    top: 50%;
+    transform: translateY(-50%);
+    width: 60%;
+    height: 120%;
+    opacity: 0.3;
+    z-index: 0;
 }
 
 .section-animation {
     width: 100%;
-    height: 200px;
+    height: 100%;
 }
 
 footer {
@@ -199,10 +220,23 @@ footer {
 }
 
 @media (max-width: 768px) {
+    /* Navigation */
     .nav-links {
         display: none;
     }
+    
+    /* Consider adding a mobile menu here, e.g.:
+    .mobile-menu-icon {
+        display: block;
+    }
+    */
 
+    /* Container */
+    .container {
+        padding: 0 15px;
+    }
+
+    /* Hero Section */
     .hero h1 {
         font-size: 2rem;
     }
@@ -211,7 +245,74 @@ footer {
         font-size: 1rem;
     }
 
+    /* Products Section */
+    .product-section {
+        padding: 1.5rem;
+    }
+
     .product-content {
         flex-direction: column;
+    }
+
+    .product-animation {
+        display: none; /* Hide animation on mobile for better readability */
+    }
+
+    .product-description {
+        padding-right: 0;
+    }
+
+    .product-description h3,
+    .product-description h4,
+    .product-description ul {
+        margin-left: 0;
+    }
+
+    .product-description > * {
+        margin-bottom: 1rem;
+    }
+
+    /* Adjust font sizes for readability */
+    .product-section h3 {
+        font-size: 1.3rem;
+    }
+
+    .product-description h4 {
+        font-size: 1.1rem;
+    }
+
+    .product-description ul {
+        padding-left: 20px;
+    }
+
+    .product-description li {
+        font-size: 0.9rem;
+    }
+
+    /* CTA Button */
+    .cta-button {
+        padding: 0.6rem 1.2rem;
+        font-size: 0.9rem;
+    }
+
+    /* Footer */
+    footer {
+        padding: 1rem 15px;
+        font-size: 0.9rem;
+    }
+}
+
+/* For even smaller screens */
+@media (max-width: 480px) {
+    .hero h1 {
+        font-size: 1.8rem;
+    }
+
+    .hero p {
+        font-size: 0.9rem;
+    }
+
+    .product-section {
+        padding: 1rem;
     }
 }
