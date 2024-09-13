@@ -27,6 +27,30 @@
     </header>
 
     <main>
+        <section class="hero">
+            <div class="hero-content container">
+                <h1>Orange Edge</h1>
+                <h3>Data Product and Infrastructure for Bitcoin, Lightning and adjacent technologies</h3>
+                <a href="#products" class="cta-button">Explore Our Solutions</a>
+            </div>
+            <div class="animation-container">
+                <svg id="data-animation" width="100%" height="100%" viewBox="0 0 800 400">
+                    <defs>
+                        <filter id="glow">
+                            <feGaussianBlur stdDeviation="2.5" result="coloredBlur"/>
+                            <feMerge>
+                                <feMergeNode in="coloredBlur"/>
+                                <feMergeNode in="SourceGraphic"/>
+                            </feMerge>
+                        </filter>
+                    </defs>
+                    <path id="bitcoin-logo" d="M300,200 L300,200 L300,200 L300,200 L300,200" stroke="#3282B8" stroke-width="3" fill="none"/>
+                    <path id="lightning-bolt" d="M500,100 L500,100 L500,100 L500,100" stroke="#C9D6DF" stroke-width="3" fill="none"/>
+                    <g id="data-points"></g>
+                    <g id="network-lines"></g>
+                </svg>
+            </div>
+        </section>
         <section id="products">
     <div class="container">
         <div id="self-service" class="product-section">
