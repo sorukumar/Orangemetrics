@@ -167,7 +167,36 @@ nav {
     overflow: hidden;
     min-height: 500px; /* Set a minimum height */
 }
+.product-section-1 {
+    background-color: #fff7ef; /* Light beige */
+}
 
+.product-section-2 {
+    background-color: #c08e27; /* Gold */
+    color: #ffffff;
+}
+
+.product-section-3 {
+    background-color: #FFF7EF; /* Light beige (same as the first one) */
+}
+
+/* Style for the CTA button in the product section */
+.product-section .cta-button {
+    display: inline-block;
+    background-color: var(--highlight-color);
+    color: var(--background-color);
+    padding: 0.8rem 1.5rem;
+    border-radius: 5px;
+    text-decoration: none;
+    font-weight: bold;
+    transition: background-color 0.3s ease, color 0.3s ease;
+    margin-top: 1rem;
+}
+
+.product-section .cta-button:hover {
+    background-color: var(--accent-color);
+    color: var(--primary-color);
+}
 .product-section h3 {
     font-size: 1.5rem;
     margin-bottom: 1rem;
@@ -209,9 +238,9 @@ nav {
     right: 0%;
     top: 50%;
     transform: translateY(-50%);
-    width: 80%;
-    height: 140%; /* Increased height of the animation */
-    opacity: 0.6;
+    width: 60%;
+    height: 120%; /* Increased height of the animation */
+    opacity: 0.5;
     z-index: 0;
 }
 
