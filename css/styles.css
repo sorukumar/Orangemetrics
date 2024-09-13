@@ -5,6 +5,7 @@
     --text-color: #1E2022;
     --accent-color: #C9D6DF;
     --highlight-color: #3282B8;
+    --navbartext-color: #FF6600;
 }
 
 * {
@@ -58,7 +59,7 @@ nav {
 
 .nav-links a {
     text-decoration: none;
-    color: var(--background-color);
+    color: var(--navbartext-color);
     font-weight: 500;
     transition: color 0.3s ease;
 }
