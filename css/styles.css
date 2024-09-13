@@ -172,8 +172,8 @@ nav {
 }
 
 .product-section-2 {
-    background-color: #c08e27; /* Gold */
-    color: #ffffff;
+    background-color:#d0e8f4; /* Gold */
+
 }
 
 .product-section-3 {
@@ -235,11 +235,10 @@ nav {
 
 .product-animation {
     position: absolute;
-    right: 0%;
-    top: 50%;
-    transform: translateY(-50%);
+    right: 0;
+    bottom: 0;
     width: 60%;
-    height: 120%; /* Increased height of the animation */
+    height: 80%; /* Reduced height to fit in the lower part */
     opacity: 0.5;
     z-index: 0;
 }
