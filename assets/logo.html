@@ -1,0 +1,105 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>OrangeMetrics Logo Generator</title>
+    <script src="https://unpkg.com/react@17/umd/react.production.min.js"></script>
+    <script src="https://unpkg.com/react-dom@17/umd/react-dom.production.min.js"></script>
+    <script src="https://unpkg.com/@babel/standalone/babel.min.js"></script>
+    <link href="https://cdn.jsdelivr.net/npm/tailwindcss@2.2.19/dist/tailwind.min.css" rel="stylesheet">
+</head>
+<body>
+    <div id="root"></div>
+
+    <script type="text/babel">
+        function App() {
+            const [logoGenerated, setLogoGenerated] = React.useState(false);
+
+            React.useEffect(() => {
+                generateLogo();
+            }, []);
+
+            const generateLogo = () => {
+                const canvas = document.getElementById('logoCanvas');
+                const ctx = canvas.getContext('2d');
+
+                // Set canvas background
+                ctx.fillStyle = '#f8f8f8';
+                ctx.fillRect(0, 0, canvas.width, canvas.height);
+
+                // Logo text
+                const orangeText = 'Orange';
+                const metricsText = 'Metrics';
+
+                // Font settings
+                const bigOFont = 'bold 80px Arial, sans-serif';
+                const rangeFont = 'bold 65px Arial, sans-serif';
+                const metricsFont = '28px Arial, sans-serif';
+
+                // Colors
+                const orangeColor = '#FF6600';
+                const metricsColor = '#555555';
+
+                // Set text baseline
+                ctx.textBaseline = 'middle';
+
+                // Calculate text widths
+                ctx.font = bigOFont;
+                const bigOWidth = ctx.measureText('O').width;
+                ctx.font = rangeFont;
+                const rangeWidth = ctx.measureText('range').width;
+                const orangeWidth = bigOWidth + rangeWidth;
+
+                // Calculate positions
+                const startX = (canvas.width - orangeWidth) / 2;  // Center Orange horizontally
+                const centerY = canvas.height / 2 - 10;
+                const metricsY = centerY + 50;
+
+                // Draw big "O"
+                ctx.font = bigOFont;
+                ctx.fillStyle = orangeColor;
+                ctx.fillText('O', startX, centerY);
+
+                // Draw "range"
+                ctx.font = rangeFont;
+                ctx.fillText('range', startX + bigOWidth, centerY);
+
+                // Draw "Metrics"
+                ctx.font = metricsFont;
+                ctx.fillStyle = metricsColor;
+                ctx.textAlign = 'right';
+                ctx.fillText(metricsText, startX + orangeWidth, metricsY);
+
+                setLogoGenerated(true);
+            };
+
+            const downloadLogo = () => {
+                const canvas = document.getElementById('logoCanvas');
+                const dataURL = canvas.toDataURL('image/png');
+                const link = document.createElement('a');
+                link.download = 'OrangeMetrics_logo.png';
+                link.href = dataURL;
+                link.click();
+            };
+
+            return (
+                <div className="flex flex-col items-center justify-center h-screen bg-gray-100">
+                    <h1 className="text-2xl font-bold mb-4">OrangeMetrics Logo Generator</h1>
+                    <canvas id="logoCanvas" width="600" height="200" className="border border-gray-300 mb-4"></canvas>
+                    {logoGenerated && (
+                        <button 
+                            onClick={downloadLogo}
+                            className="bg-blue-500 hover:bg-blue-700 text-white font-bold py-2 px-4 rounded"
+                        >
+                            Download Logo
+                        </button>
+                    )}
+                </div>
+            );
+        }
+
+        ReactDOM.render(<App />, document.getElementById('root'));
+    </script>
+</body>
+</html>
