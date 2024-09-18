@@ -30,18 +30,20 @@
   <!-- Orange Advantage Processing -->
   <g class="data-processing">
     <rect x="300" y="100" width="200" height="200" rx="10" ry="10" fill="url(#orangeGradient)" />
-    <text x="400" y="150" font-size="18" fill="white" text-anchor="middle" font-weight="bold">Orange Advantage</text>
-    <text x="400" y="180" font-size="14" fill="white" text-anchor="middle">Data Processing</text>
-    <text x="400" y="210" font-size="12" fill="white" text-anchor="middle">AI-Powered</text>
-    <text x="400" y="230" font-size="12" fill="white" text-anchor="middle">No-Code &amp; SQL-Based</text>
+    <text x="400" y="150" font-size="18" fill="white" text-anchor="middle" font-weight="bold">Orange Edge</text>
+    <text x="400" y="190" font-size="14" fill="white" text-anchor="middle">Data collection</text>
+    <text x="400" y="220" font-size="14" fill="white" text-anchor="middle">Cleaning and transformation</text>
+    <text x="400" y="250" font-size="14" fill="white" text-anchor="middle">Feature engineering, New varible</text>
+    <text x="400" y="280" font-size="14" fill="white" text-anchor="middle">Data Enrichment,Augmentattion</text>
   </g>
 
   <!-- Self-Service Dashboard Creation -->
   <g class="dashboard-creation">
     <rect x="600" y="50" width="180" height="300" rx="10" ry="10" fill="url(#purpleGradient)" />
-    <text x="690" y="90" font-size="18" fill="white" text-anchor="middle" font-weight="bold">Self-Service</text>
-    <text x="690" y="120" font-size="16" fill="white" text-anchor="middle">Dashboard Creation</text>
-    <rect x="620" y="140" width="140" height="190" rx="5" ry="5" fill="#ecf0f1" />
+    <text x="690" y="90" font-size="18" fill="white" text-anchor="middle" font-weight="bold">AI Powered no-code</text>
+    <text x="690" y="110" font-size="18" fill="white" text-anchor="middle" font-weight="bold"> SQL Based</text>
+    <text x="690" y="130" font-size="16" fill="white" text-anchor="middle">Dashboard Creation</text>
+    <rect x="620" y="150" width="140" height="190" rx="5" ry="5" fill="#ecf0f1" />
     <text x="690" y="170" font-size="14" fill="#34495e" text-anchor="middle">Visual</text>
     <text x="690" y="200" font-size="14" fill="#34495e" text-anchor="middle">Insightful</text>
     <text x="690" y="230" font-size="14" fill="#34495e" text-anchor="middle">Powerful</text>
@@ -53,7 +55,7 @@
                        M640 310 L660 270 L680 280 L700 250 L720 210;
                        M640 310 L660 280 L680 290 L700 260 L720 230"/>
     </path>
-    <text x="690" y="340" font-size="14" fill="white" text-anchor="middle">Beautiful Charts</text>
+    
   </g>
 
   <!-- Connecting Lines -->
