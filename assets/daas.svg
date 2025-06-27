@@ -1,0 +1,96 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg width="500" height="400" viewBox="0 0 500 400" xmlns="http://www.w3.org/2000/svg">
+    <defs>
+        <filter id="glow">
+            <feGaussianBlur stdDeviation="2" result="coloredBlur"/>
+            <feMerge>
+                <feMergeNode in="coloredBlur"/>
+                <feMergeNode in="SourceGraphic"/>
+            </feMerge>
+        </filter>
+        <linearGradient id="dataFlow" x1="0%" y1="0%" x2="100%" y2="0%">
+            <stop offset="0%" style="stop-color:#FF8B5E;stop-opacity:0.3"/>
+            <stop offset="50%" style="stop-color:#FF8B5E;stop-opacity:0.8"/>
+            <stop offset="100%" style="stop-color:#FF8B5E;stop-opacity:0.3"/>
+        </linearGradient>
+        <linearGradient id="warmGradient" x1="0%" y1="0%" x2="100%" y2="0%">
+            <stop offset="0%" style="stop-color:#FF8B5E;stop-opacity:1"/>
+            <stop offset="100%" style="stop-color:#FFD3C4;stop-opacity:1"/>
+        </linearGradient>
+    </defs>
+
+    <!-- Data Sources - Left Side -->
+    <g transform="translate(50,40)">
+        <circle cx="0" cy="0" r="15" fill="url(#warmGradient)" filter="url(#glow)"/>
+        <text x="25" y="5" fill="#4A4B57" font-size="14">Bitcoin Data</text>
+        <path d="M15,0 C125,0 175,100 250,200" stroke="url(#dataFlow)" stroke-width="2" fill="none"/>
+    </g>
+
+    <g transform="translate(50,100)">
+        <circle cx="0" cy="0" r="15" fill="url(#warmGradient)" filter="url(#glow)"/>
+        <text x="25" y="5" fill="#4A4B57" font-size="14">Lightning Network</text>
+        <path d="M15,0 C125,20 175,100 250,200" stroke="url(#dataFlow)" stroke-width="2" fill="none"/>
+    </g>
+
+    <g transform="translate(50,160)">
+        <circle cx="0" cy="0" r="15" fill="url(#warmGradient)" filter="url(#glow)"/>
+        <text x="25" y="5" fill="#4A4B57" font-size="14">Social Data</text>
+        <path d="M15,0 C125,40 175,150 250,200" stroke="url(#dataFlow)" stroke-width="2" fill="none"/>
+    </g>
+
+    <g transform="translate(50,220)">
+        <circle cx="0" cy="0" r="15" fill="url(#warmGradient)" filter="url(#glow)"/>
+        <text x="25" y="5" fill="#4A4B57" font-size="14">Dev Activity</text>
+        <path d="M15,0 C125,60 175,180 250,200" stroke="url(#dataFlow)" stroke-width="2" fill="none"/>
+    </g>
+
+    <g transform="translate(50,280)">
+        <circle cx="0" cy="0" r="15" fill="url(#warmGradient)" filter="url(#glow)"/>
+        <text x="25" y="5" fill="#4A4B57" font-size="14">Layer 2 Data</text>
+        <path d="M15,0 C125,80 175,190 250,200" stroke="url(#dataFlow)" stroke-width="2" fill="none"/>
+    </g>
+
+    <g transform="translate(50,340)">
+        <circle cx="0" cy="0" r="15" fill="url(#warmGradient)" filter="url(#glow)"/>
+        <text x="25" y="5" fill="#4A4B57" font-size="14">LLM Data</text>
+        <path d="M15,0 C125,100 175,195 250,200" stroke="url(#dataFlow)" stroke-width="2" fill="none"/>
+    </g>
+
+    <!-- Central Processing Hub -->
+    <g transform="translate(250,200)">
+        <circle cx="0" cy="0" r="45" fill="#FF8B5E" opacity="0.1"/>
+        <circle cx="0" cy="0" r="35" fill="#FF8B5E" opacity="0.2"/>
+        <circle cx="0" cy="0" r="25" fill="url(#warmGradient)" filter="url(#glow)"/>
+        <text x="0" y="-35" fill="#4A4B57" font-size="12" text-anchor="middle">Data Processing</text>
+        <text x="0" y="45" fill="#4A4B57" font-size="10" text-anchor="middle">Analytics Engine</text>
+    </g>
+
+    <!-- Output Streams -->
+    <g transform="translate(400,120)">
+        <circle cx="0" cy="0" r="15" fill="url(#warmGradient)" filter="url(#glow)"/>
+        <text x="25" y="5" fill="#4A4B57" font-size="14">Reports</text>
+    </g>
+
+    <g transform="translate(400,200)">
+        <circle cx="0" cy="0" r="15" fill="url(#warmGradient)" filter="url(#glow)"/>
+        <text x="25" y="5" fill="#4A4B57" font-size="14">Insights</text>
+    </g>
+
+    <g transform="translate(400,280)">
+        <circle cx="0" cy="0" r="15" fill="url(#warmGradient)" filter="url(#glow)"/>
+        <text x="25" y="5" fill="#4A4B57" font-size="14">Smart Decisions</text>
+    </g>
+
+    <!-- Output Connection Lines -->
+    <path d="M275,200 C325,200 350,120 400,120" stroke="url(#dataFlow)" stroke-width="2" fill="none"/>
+    <path d="M275,200 C325,200 350,200 400,200" stroke="url(#dataFlow)" stroke-width="2" fill="none"/>
+    <path d="M275,200 C325,200 350,280 400,280" stroke="url(#dataFlow)" stroke-width="2" fill="none"/>
+
+    <!-- Processing Indicators -->
+    <g transform="translate(250,200)">
+        <circle cx="0" cy="0" r="30" fill="none" stroke="#FF8B5E" stroke-width="1" opacity="0.3">
+            <animate attributeName="r" from="30" to="40" dur="2s" repeatCount="indefinite"/>
+            <animate attributeName="opacity" from="0.3" to="0" dur="2s" repeatCount="indefinite"/>
+        </circle>
+    </g>
+</svg>

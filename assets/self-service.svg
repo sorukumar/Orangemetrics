@@ -1,91 +1,64 @@
-<svg class="self-service-animation" viewBox="0 0 800 400" xmlns="http://www.w3.org/2000/svg">
-  <defs>
-    <linearGradient id="orangeGradient" x1="0%" y1="0%" x2="100%" y2="0%">
-      <stop offset="0%" style="stop-color:#f39c12;stop-opacity:1" />
-      <stop offset="100%" style="stop-color:#e67e22;stop-opacity:1" />
-    </linearGradient>
-    <linearGradient id="purpleGradient" x1="0%" y1="0%" x2="100%" y2="0%">
-      <stop offset="0%" style="stop-color:#9b59b6;stop-opacity:1" />
-      <stop offset="100%" style="stop-color:#8e44ad;stop-opacity:1" />
-    </linearGradient>
-    <!-- Data particle animation -->
-    <circle id="dataParticle" cx="0" cy="0" r="3" fill="#f39c12" />
-  </defs>
+<svg width="400" height="300" viewBox="0 0 400 300" fill="none" xmlns="http://www.w3.org/2000/svg">
+    <!-- Define gradients and filters -->
+    <defs>
+        <linearGradient id="bgGradient" x1="0" y1="0" x2="400" y2="300">
+            <stop offset="0%" stop-color="#FFE4DC"/>
+            <stop offset="100%" stop-color="#FFF6F3"/>
+        </linearGradient>
+        <linearGradient id="chartGradient" x1="0" y1="0" x2="0" y2="1">
+            <stop offset="0%" stop-color="#FF8B5E" stop-opacity="0.3"/>
+            <stop offset="100%" stop-color="#FF8B5E" stop-opacity="0.05"/>
+        </linearGradient>
+        <filter id="dropShadow">
+            <feDropShadow dx="0" dy="2" stdDeviation="3" flood-opacity="0.1"/>
+        </filter>
+    </defs>
 
-  <!-- Orange Advantage Data Sources -->
-  <g class="data-sources">
-    <rect x="20" y="20" width="160" height="60" rx="5" ry="5" fill="#3498db"/>
-    <text x="100" y="55" font-size="14" fill="white" text-anchor="middle">Bitcoin Blockchain</text>
+    <!-- Background with subtle pattern -->
+    <rect width="400" height="300" fill="url(#bgGradient)"/>
     
-    <rect x="20" y="100" width="160" height="60" rx="5" ry="5" fill="#2ecc71"/>
-    <text x="100" y="135" font-size="14" fill="white" text-anchor="middle">Lightning Network</text>
+    <!-- Main Dashboard Container -->
+    <rect x="40" y="40" width="320" height="220" rx="12" fill="#FFFFFF" filter="url(#dropShadow)"/>
     
-    <rect x="20" y="180" width="160" height="60" rx="5" ry="5" fill="#e74c3c"/>
-    <text x="100" y="215" font-size="14" fill="white" text-anchor="middle">Layer 2 Solutions</text>
+    <!-- Top Bar -->
+    <rect x="40" y="40" width="320" height="40" rx="12" fill="#2D3047"/>
     
-    <rect x="20" y="260" width="160" height="60" rx="5" ry="5" fill="#f1c40f"/>
-    <text x="100" y="295" font-size="14" fill="white" text-anchor="middle">Social/Search</text>
-  </g>
-
-  <!-- Orange Advantage Processing -->
-  <g class="data-processing">
-    <rect x="300" y="100" width="200" height="200" rx="10" ry="10" fill="url(#orangeGradient)" />
-    <text x="400" y="150" font-size="18" fill="white" text-anchor="middle" font-weight="bold">Orange Edge</text>
-    <text x="400" y="190" font-size="14" fill="white" text-anchor="middle">Data collection</text>
-    <text x="400" y="220" font-size="14" fill="white" text-anchor="middle">Cleaning and transformation</text>
-    <text x="400" y="250" font-size="14" fill="white" text-anchor="middle">Feature engineering, New varible</text>
-    <text x="400" y="280" font-size="14" fill="white" text-anchor="middle">Data Enrichment,Augmentattion</text>
-  </g>
-
-  <!-- Self-Service Dashboard Creation -->
-  <g class="dashboard-creation">
-    <rect x="600" y="50" width="180" height="300" rx="10" ry="10" fill="url(#purpleGradient)" />
-    <text x="690" y="90" font-size="18" fill="white" text-anchor="middle" font-weight="bold">AI Powered no-code</text>
-    <text x="690" y="110" font-size="18" fill="white" text-anchor="middle" font-weight="bold"> SQL Based</text>
-    <text x="690" y="130" font-size="16" fill="white" text-anchor="middle">Dashboard Creation</text>
-    <rect x="620" y="150" width="140" height="190" rx="5" ry="5" fill="#ecf0f1" />
-    <text x="690" y="170" font-size="14" fill="#34495e" text-anchor="middle">Visual</text>
-    <text x="690" y="200" font-size="14" fill="#34495e" text-anchor="middle">Insightful</text>
-    <text x="690" y="230" font-size="14" fill="#34495e" text-anchor="middle">Powerful</text>
+    <!-- Menu Icons -->
+    <circle cx="65" cy="60" r="6" fill="#FF8B5E"/>
+    <circle cx="85" cy="60" r="6" fill="#97B3D0"/>
+    <circle cx="105" cy="60" r="6" fill="#FFD3C4"/>
     
-    <!-- Beautiful Charts Representation -->
-    <path d="M640 310 L660 280 L680 290 L700 260 L720 230" fill="none" stroke="#3498db" stroke-width="3" stroke-linecap="round">
-      <animate attributeName="d" dur="2s" repeatCount="indefinite"
-               values="M640 310 L660 280 L680 290 L700 260 L720 230;
-                       M640 310 L660 270 L680 280 L700 250 L720 210;
-                       M640 310 L660 280 L680 290 L700 260 L720 230"/>
-    </path>
+    <!-- Main Chart Area -->
+    <rect x="55" y="95" width="180" height="150" rx="8" fill="#F8F9FC"/>
     
-  </g>
-
-  <!-- Connecting Lines -->
-  <path d="M180 50 Q240 200 300 200" fill="none" stroke="#bdc3c7" stroke-width="3" class="flow-line"/>
-  <path d="M180 130 Q240 200 300 200" fill="none" stroke="#bdc3c7" stroke-width="3" class="flow-line"/>
-  <path d="M180 210 Q240 200 300 200" fill="none" stroke="#bdc3c7" stroke-width="3" class="flow-line"/>
-  <path d="M180 290 Q240 200 300 200" fill="none" stroke="#bdc3c7" stroke-width="3" class="flow-line"/>
-  <path d="M500 200 L600 200" fill="none" stroke="#bdc3c7" stroke-width="3" class="flow-line"/>
-
-  <!-- Data Flow Animation -->
-  <g class="data-flow">
-    <use href="#dataParticle">
-      <animateMotion dur="3s" repeatCount="indefinite" begin="0s"
-        path="M180 50 Q240 200 300 200" />
-    </use>
-    <use href="#dataParticle">
-      <animateMotion dur="3s" repeatCount="indefinite" begin="0.75s"
-        path="M180 130 Q240 200 300 200" />
-    </use>
-    <use href="#dataParticle">
-      <animateMotion dur="3s" repeatCount="indefinite" begin="1.5s"
-        path="M180 210 Q240 200 300 200" />
-    </use>
-    <use href="#dataParticle">
-      <animateMotion dur="3s" repeatCount="indefinite" begin="2.25s"
-        path="M180 290 Q240 200 300 200" />
-    </use>
-    <use href="#dataParticle">
-      <animateMotion dur="2s" repeatCount="indefinite"
-        path="M500 200 L600 200" />
-    </use>
-  </g>
+    <!-- Chart Lines and Points -->
+    <path d="M55 195 L85 160 L115 180 L145 140 L175 155 L205 120 L235 145" 
+          stroke="#FF8B5E" 
+          stroke-width="2.5"
+          fill="none"/>
+    
+    <!-- Chart Area Fill -->
+    <path d="M55 195 L85 160 L115 180 L145 140 L175 155 L205 120 L235 145 L235 195 L55 195" 
+          fill="url(#chartGradient)"/>
+    
+    <!-- Data Points -->
+    <circle cx="85" cy="160" r="4" fill="#FF8B5E"/>
+    <circle cx="115" cy="180" r="4" fill="#FF8B5E"/>
+    <circle cx="145" cy="140" r="4" fill="#FF8B5E"/>
+    <circle cx="175" cy="155" r="4" fill="#FF8B5E"/>
+    <circle cx="205" cy="120" r="4" fill="#FF8B5E"/>
+    <circle cx="235" cy="145" r="4" fill="#FF8B5E"/>
+    
+    <!-- Side Panel -->
+    <rect x="250" y="95" width="95" height="150" rx="8" fill="#F8F9FC"/>
+    
+    <!-- Panel Items -->
+    <rect x="260" y="110" width="75" height="8" rx="4" fill="#FF8B5E" opacity="0.8"/>
+    <rect x="260" y="130" width="75" height="8" rx="4" fill="#97B3D0" opacity="0.6"/>
+    <rect x="260" y="150" width="75" height="8" rx="4" fill="#97B3D0" opacity="0.6"/>
+    <rect x="260" y="170" width="75" height="8" rx="4" fill="#97B3D0" opacity="0.6"/>
+    
+    <!-- Interactive Elements -->
+    <circle cx="290" cy="210" r="12" fill="#FF8B5E" opacity="0.2"/>
+    <circle cx="320" cy="210" r="12" fill="#97B3D0" opacity="0.2"/>
 </svg>

@@ -4,13 +4,31 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Orangemetrics - Bitcoin's Data Platform</title>
+    <meta name="description" content="Orangemetrics - The premier data platform for Bitcoin & Lightning Network analytics. Visualize, analyze, and share insights from your Bitcoin data.">
+    <meta name="keywords" content="Bitcoin analytics, Lightning Network data, Bitcoin metrics, crypto analytics">
+    <link rel="canonical" href="https://orangemetrics.xyz">
+    <link rel="icon" type="image/x-icon" href="assets/favicon.png">
     <link rel="stylesheet" href="css/styles.css">
     <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.9.1/gsap.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.9.1/ScrollTrigger.min.js"></script>
+    <meta name="theme-color" content="#FF8B5E">
+    <link rel="preconnect" href="https://cdnjs.cloudflare.com">
+    <link rel="dns-prefetch" href="https://cdnjs.cloudflare.com">
 </head>
 <body>
-    <header>
+    <a href="#main-content" class="skip-to-main">Skip to main content</a>
+    <header role="banner">
         <nav class="container">
-            <div class="logo">Orangemetrics</div>
+            <div class="logo">
+                <img src="assets/logo.png" alt="Orangemetrics Logo">
+            </div>
+            <button class="nav-toggle" aria-label="Toggle navigation">
+                <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                    <line x1="3" y1="12" x2="21" y2="12"></line>
+                    <line x1="3" y1="6" x2="21" y2="6"></line>
+                    <line x1="3" y1="18" x2="21" y2="18"></line>
+                </svg>
+            </button>
             <ul class="nav-links">
                 <li class="dropdown">
                     <a href="#" class="dropbtn">Products</a>
@@ -19,40 +37,36 @@
                         <a href="#open-source">Open Source Projects</a>
                         <a href="#secure-reporting">Enterprise Solution</a>
                     </div>
-<!--                 </li>
-                <li><a href="#about">About</a></li> -->
-                <li><a href="https://x.com/Soru_kumar" target="_blank">Contact</a></li>
+                </li>
+                <li class="dropdown">
+                    <a href="#" class="dropbtn">Services</a>
+                    <div class="dropdown-content">
+                        <a href="#cdo-service">CDO as a Service</a>
+                        <a href="#daas">Data as a Service</a>
+                    </div>
+                </li>
+                <li><a href="#contact">Contact</a></li>
             </ul>
         </nav>
     </header>
 
-    <main>
+    <!-- Include sprite system -->
+    <object id="svg-sprites" type="image/svg+xml" data="assets/sprite.svg" style="display: none;" aria-hidden="true"></object>
+
+    <main id="main-content" role="main">
         <section class="hero">
+            <object id="hero-animation" type="image/svg+xml" data="assets/hero-background.svg" aria-label="Background Animation" class="hero-background">
+                Your browser does not support SVG
+            </object>
             <div class="hero-content container">
                 <h1>Orange Edge</h1>
                 <h3>Data Product and Infrastructure for Bitcoin, Lightning and adjacent technologies</h3>
                 <br>
                 <a href="#products" class="cta-button">Explore Our Solutions</a>
             </div>
-            <div class="animation-container">
-                <svg id="data-animation" width="100%" height="100%" viewBox="0 0 800 400">
-                    <defs>
-                        <filter id="glow">
-                            <feGaussianBlur stdDeviation="2.5" result="coloredBlur"/>
-                            <feMerge>
-                                <feMergeNode in="coloredBlur"/>
-                                <feMergeNode in="SourceGraphic"/>
-                            </feMerge>
-                        </filter>
-                    </defs>
-                    <path id="bitcoin-logo" d="M300,200 L300,200 L300,200 L300,200 L300,200" stroke="#3282B8" stroke-width="3" fill="none"/>
-                    <path id="lightning-bolt" d="M500,100 L500,100 L500,100 L500,100" stroke="#C9D6DF" stroke-width="3" fill="none"/>
-                    <g id="data-points"></g>
-                    <g id="network-lines"></g>
-                </svg>
-            </div>
         </section>
-       <section id="products">
+       <section id="products" aria-labelledby="products-title">
+    <h2 id="products-title" class="visually-hidden">Our Products</h2>
     <div class="container">
         <div id="self-service" class="product-section product-section-1">
             <div class="product-content">
@@ -64,10 +78,10 @@
                         <li>Query and create comprehensive, complex, and customized reports</li>
                         <li>Share reports with your peers over social media or email</li>
                     </ul>
-                    <a href="https://forms.gle/YuGmi9m53WLSbrtw5" class="cta-button" target="_blank">Sign up for Early Access</a>
+                    <a href="https://datalabs.orangemetrics.xyz/" class="cta-button" target="_blank">Sign up for Access</a>
                 </div>
                 <div class="product-animation">
-                    <object type="image/svg+xml" data="assets/self-service.svg" class="section-animation">
+                    <object type="image/svg+xml" data="assets/self-service.svg" class="section-animation" loading="lazy" aria-label="Bitcoin Data Platform Illustration">
                         Your browser does not support SVG
                     </object>
                 </div>
@@ -79,14 +93,15 @@
                 <div class="product-description">
                     <h3>Open Source Projects</h3>
                     <h4>Explore our community-driven initiatives. </h4>
-                    <ul>
-                        <li>Plebdashboard: Data and Visualization on the Lightning Network</li>
-                        <li>LightningDS: A Python library for performing data science on the Lightning Network</li>
-                        <li>BitcoinisBeautiful: The goal is to make bitcoin data beautiful and insightful </li>
+                    <ul class="linked-list">
+                        <li><a href="https://sorukumar.github.io/Bitcoin-Data-Labs/#" target="_blank"><span class="project-title">Bitcoin Data Labs:</span> A non-profit focused on building open source data tools for the ecosystem</a></li>
+                        <li><a href="https://datalabs.orangemetrics.xyz/superset/dashboard/p/kOzLKO8Lb9N/" target="_blank"><span class="project-title">Plebdashboard:</span> Data and Visualization on the Lightning Network</a></li>
+                        <li><a href="https://github.com/sorukumar/LightningDS" target="_blank"><span class="project-title">LightningDS:</span> A Python library for performing data science on the Lightning Network</a></li>
+                        <li><a href="https://sorukumar.github.io/BitcoinisBeautiful/" target="_blank"><span class="project-title">BitcoinisBeautiful:</span> The goal is to make bitcoin data beautiful and insightful</a></li>
                     </ul>
                 </div>
                 <div class="product-animation">
-                    <object type="image/svg+xml" data="assets/open-source.svg" class="section-animation">
+                    <object type="image/svg+xml" data="assets/open-source.svg" class="section-animation" loading="lazy" aria-label="Open Source Projects Illustration">
                         Your browser does not support SVG
                     </object>
                 </div>
@@ -105,9 +120,93 @@
                         <li>Share sophisticated insights swiftly with your teams</li>
                         <li>Simplify your setup: say goodbye to numerous, needless data platforms</li>
                     </ul>
+                    <div class="enterprise-contact">
+                        <h4 id="enterprise-form-title">Ready to elevate your enterprise data platform?</h4>
+                        <div class="contact-actions">
+                            <a href="#contact" class="cta-button">Schedule a Demo</a>
+                        </div>
+                    </div>
                 </div>
                 <div class="product-animation">
-                    <object type="image/svg+xml" data="assets/secure-reporting.svg" class="section-animation">
+                    <object type="image/svg+xml" data="assets/secure-reporting.svg" class="section-animation" loading="lazy" aria-label="Enterprise Solutions Illustration">
+                        Your browser does not support SVG
+                    </object>
+                </div>
+            </div>
+        </div>
+
+        <div id="cdo-service" class="product-section product-section-4">
+            <div class="product-content">
+                <div class="product-description">
+                    <h3>CDO as a Service</h3>
+                    <h4>Your Strategic Partner in Data & AI Leadership</h4>
+                    <p class="service-intro">Elevate your organization with expert data leadership and AI strategy, without the overhead of a full-time Chief Data Officer.</p>
+                    <ul>
+                        <li>Strategic data roadmap aligned with your business objectives</li>
+                        <li>Modern data architecture and infrastructure guidance</li>
+                        <li>Data governance and compliance framework</li>
+                        <li>AI strategy and implementation planning</li>
+                        <li>Regular consultation with experienced data leaders</li>
+                    </ul>
+                </div>
+                <div class="cdo-contact">
+                    <h4 id="cdo-form-title">Ready to elevate your data strategy?</h4>
+                    <form id="cdo-contact-form" class="contact-form" target="hidden_iframe"
+                        action="https://docs.google.com/forms/u/0/d/e/1FAIpQLSd8x2-1AEApGMXAN0NgXSCGOU6XZcs-yBgF8_3Suumr70MvvA/formResponse" 
+                        method="POST">
+                        <div class="form-group">
+                            <label for="cdo-name">Name</label>
+                            <input type="text" id="cdo-name" name="entry.748670802" required>
+                        </div>
+                        <div class="form-group">
+                            <label for="cdo-email">Email</label>
+                            <input type="email" id="cdo-email" name="entry.1791779232" required>
+                        </div>
+                        <div class="form-group">
+                            <label for="cdo-company">Company</label>
+                            <input type="text" id="cdo-company" name="entry.2066384570" required>
+                        </div>
+                        <div class="form-group">
+                            <label for="cdo-needs">Your Data Challenges</label>
+                            <input type="hidden" id="cdo-form-source" name="form-source" value="CDO Service Form">
+                            <textarea id="cdo-needs" name="entry.778966652" placeholder="Tell us about your current data challenges and what you'd like to achieve..." required></textarea>
+                        </div>
+                        <div class="contact-actions">
+                            <button type="submit" class="cta-button">Schedule a Consultation</button>
+                            <a href="https://x.com/Soru_kumar" target="_blank" class="social-link" rel="noopener" aria-label="Follow us on X (formerly Twitter)">
+                                <svg width="24" height="24" fill="currentColor" aria-hidden="true">
+                                    <use href="#icon-x"/>
+                                </svg>
+                                <span>Follow us on X</span>
+                            </a>
+                        </div>
+                    </form>
+                </div>
+            </div>
+        </div>
+
+        <div id="daas" class="product-section product-section-5">
+            <div class="product-content">
+                <div class="product-description">
+                    <h3>Data as a Service</h3>
+                    <h4>Custom Data Solutions for Your Bitcoin Business</h4>
+                    <p class="service-intro">Access curated, clean, and comprehensive data across the Bitcoin ecosystem. From on-chain metrics to social sentiment, we've got you covered.</p>
+                    <ul>
+                        <li>Bitcoin & Lightning Network data streams</li>
+                        <li>Developer activity metrics across Bitcoin projects</li>
+                        <li>Social media sentiment and market signals</li>
+                        <li>LLM-processed competitive intelligence</li>
+                        <li>Custom data collection for your unique needs</li>
+                    </ul>
+                    <div class="daas-contact">
+                        <p class="unique-data">Need exotic data? We love a challenge! Get in touch to explore what's possible.</p>
+                        <div class="contact-actions">
+                            <a href="#contact" class="cta-button">Let's Talk Data</a>
+                        </div>
+                    </div>
+                </div>
+                <div class="product-animation">
+                    <object type="image/svg+xml" data="assets/daas.svg" class="section-animation" loading="lazy" aria-label="Data as a Service Illustration">
                         Your browser does not support SVG
                     </object>
                 </div>
@@ -115,13 +214,140 @@
         </div>
     </div>
 </section>
-    </main>
 
-    <footer>
+<section id="testimonials" class="testimonials">
+    <div class="container">
+        <h2>Trusted by Businesses</h2>
+        <div class="testimonials-grid">
+            <div class="testimonial-card">
+                <div class="testimonial-content">
+                    <p>"Orangemetrics has transformed our data architecture and AI strategy. Their expertise across technologies is invaluable."</p>
+                </div>
+                <div class="testimonial-author">
+                    <!-- <img src="assets/avatar1.svg" alt="Tech Leader" loading="lazy"> -->
+                    <div>
+                        <!-- <h4>Jane Doe</h4> -->
+                        <p>CTO, Tech Startup</p>
+                    </div>
+                </div>
+            </div>
+            <div class="testimonial-card">
+                <div class="testimonial-content">
+                    <p>"Their CDO as a Service has been instrumental in shaping our data strategy and AI implementation roadmap."</p>
+                </div>
+                <div class="testimonial-author">
+                    <!-- <img src="assets/avatar2.svg" alt="Vaibhav S" loading="lazy"> -->
+                    <div>
+                        <h4>Vaibhav S</h4>
+                        <p>CEO, Photospot</p>
+                    </div>
+                </div>
+            </div>
+            <div class="testimonial-card">
+                <div class="testimonial-content">
+                    <p>"Their expertise in both traditional data infrastructure and blockchain technologies helped us build a future-proof data platform."</p>
+                </div>
+                <div class="testimonial-author">
+                    <!-- <img src="assets/avatar3.svg" alt="Data Leader" loading="lazy"> -->
+                    <div>
+                        <!-- <h4>Alex Chen</h4> -->
+                        <p>Head of Data, FinTech Company</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+
+    <section id="contact" class="contact">
         <div class="container">
-            <p>&copy; 2024 Orangemetrics. All rights reserved.</p>
+            <h2>Get in Touch</h2>
+            <div class="contact-content">
+                <div class="contact-info">
+                    <h3>Let's Talk Data</Data></h3>
+                    <p>Have questions about our platform or want to explore how Orangemetrics can help your business?</p>
+                    <div class="contact-details">
+                        <a href="https://x.com/Soru_kumar" target="_blank" class="social-link" rel="noopener" aria-label="Follow us on X (formerly Twitter)">
+                            <svg width="24" height="24" fill="currentColor" aria-hidden="true">
+                                <use href="#icon-x"/>
+                            </svg>
+                            <span>Follow us on X</span>
+                        </a>
+                    </div>
+                </div>
+                <form id="contact-form" class="contact-form" target="hidden_iframe"
+                    action="https://docs.google.com/forms/u/0/d/e/1FAIpQLSd8x2-1AEApGMXAN0NgXSCGOU6XZcs-yBgF8_3Suumr70MvvA/formResponse" 
+                    method="POST">
+                    <div class="form-group">
+                        <label for="name">Name</label>
+                        <input type="text" id="name" name="entry.748670802" required>
+                    </div>
+                    <div class="form-group">
+                        <label for="email">Email</label>
+                        <input type="email" id="email" name="entry.1791779232" required>
+                    </div>
+                    <div class="form-group">
+                        <label for="company">Company (Optional)</label>
+                        <input type="text" id="company" name="entry.2066384570">
+                    </div>
+                    <div class="form-group">
+                        <label for="message">Message</label>
+                        <input type="hidden" id="general-form-source" name="form-source" value="General Contact Form">
+                        <textarea id="message" name="entry.778966652" required></textarea>
+                    </div>
+                    <button type="submit" class="cta-button">Send Message</button>
+                </form>
+            </div>
+        </div>
+    </section>
+
+    <footer role="contentinfo">
+        <div class="container">
+            <div class="footer-content">
+                <div class="footer-brand">
+                    <div class="logo">
+                        <img src="assets/logo.png" alt="Orangemetrics Logo">
+                    </div>
+                    <p>Data Product and Infrastructure for Bitcoin, Lightning and adjacent technologies. Leading the way in Bitcoin analytics and insights.</p>
+                </div>
+                <div class="footer-links">
+                    <h4>Products</h4>
+                    <ul>
+                        <li><a href="#self-service">Bitcoin's Data Platform</a></li>
+                        <li><a href="#open-source">Open Source Projects</a></li>
+                        <li><a href="#secure-reporting">Enterprise Solution</a></li>
+                    </ul>
+                </div>
+                <div class="footer-links">
+                    <h4>Services</h4>
+                    <ul>
+                        <li><a href="#cdo-service">CDO as a Service</a></li>
+                        <li><a href="#daas">Data as a Service</a></li>
+                    </ul>
+                </div>
+                <div class="footer-links">
+                    <h4>Connect</h4>
+                    <ul>
+                        <li><a href="#contact">Contact Us</a></li>
+                        <li><a href="https://x.com/Soru_kumar" target="_blank">Twitter</a></li>
+                    </ul>
+                </div>
+            </div>
+            <div class="footer-bottom">
+                <p>&copy; 2024 Orangemetrics. All rights reserved.</p>
+                <div class="footer-social">
+                    <a href="https://x.com/Soru_kumar" target="_blank" aria-label="Follow us on X (Twitter)">
+                        <svg width="20" height="20" fill="currentColor" aria-hidden="true">
+                            <use href="#icon-x"/>
+                        </svg>
+                    </a>
+                </div>
+            </div>
         </div>
     </footer>
+
+    <iframe name="hidden_iframe" id="hidden_iframe" style="display:none;"></iframe>
+    <div id="notifications" class="notifications" role="alert" aria-live="polite"></div>
 
     <script src="scripts/animations.js"></script>
     <script src="scripts/main.js"></script>
