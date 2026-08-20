@@ -1,2 +1,0 @@
-# Orangemetrics
-Orangemetrics Web Application

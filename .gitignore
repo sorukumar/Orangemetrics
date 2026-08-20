@@ -1,0 +1,20 @@
+# OS generated files
+.DS_Store
+.DS_Store?
+._*
+.Spotlight-V100
+.Trashes
+ehthumbs.db
+Thumbs.db
+
+# Documentation
+*.md
+
+# Backups
+*.backup.*
+*.bak
+*~
+
+# Scripts
+*.py
+parse_transcript.py

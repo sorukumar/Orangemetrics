@@ -1,186 +1,54 @@
 <svg width="100%" height="100%" viewBox="0 0 1440 800" fill="none" xmlns="http://www.w3.org/2000/svg" preserveAspectRatio="xMidYMid slice">
-    <!-- Gradients and Patterns -->
     <defs>
-        <linearGradient id="nodeGlow" x1="0" y1="0" x2="1" y2="1">
-            <stop offset="0%" stop-color="#FF7040" stop-opacity="0.2"/>
-            <stop offset="100%" stop-color="#FF8F66" stop-opacity="0.1"/>
-        </linearGradient>
+        <!-- Very subtle surgical grid -->
+        <pattern id="premiumGrid" width="40" height="40" patternUnits="userSpaceOnUse">
+            <path d="M 40 0 L 0 0 0 40" fill="none" stroke="#E4E4E7" stroke-width="0.5" opacity="0.6"/>
+        </pattern>
         
-        <pattern id="grid" width="60" height="60" patternUnits="userSpaceOnUse">
-            <path d="M 60 0 L 0 0 0 60" fill="none" stroke="#FF7040" stroke-width="0.3" opacity="0.1"/>
-        </pattern>
-
-        <!-- Bitcoin symbol pattern -->
-        <pattern id="btcPattern" width="200" height="200" patternUnits="userSpaceOnUse">
-            <path d="M130 60v-20H80V20h-10v20H50V20H40v20H20v20h20v100H20v20h20v20h10v-20h20v20h10v-20h50v20h10v-20h20v-20h-20V60h20z M110 60v100H70V60h40z" 
-                  fill="none" stroke="#FF7040" stroke-width="0.4" opacity="0.05"/>
-        </pattern>
-
-        <!-- Graph Theory Formula Pattern - moved further right -->
-        <pattern id="formulaPattern" width="320" height="180" patternUnits="userSpaceOnUse" patternTransform="translate(260, 60)">
-            <text x="0" y="15" font-family="monospace" font-size="12" fill="#FF7040" opacity="0.15">P(w|c) = softmax(w·c)</text>
-            <text x="0" y="35" font-family="monospace" font-size="12" fill="#FF7040" opacity="0.15">log P(w|c) = w·c - log∑exp(w'·c)</text>
-            <text x="0" y="65" font-family="monospace" font-size="12" fill="#FF7040" opacity="0.15">L = -∑log P(wₒ|c)</text>
-            <text x="0" y="95" font-family="monospace" font-size="12" fill="#FF7040" opacity="0.15">G = (V, E, w)</text>
-            <text x="0" y="115" font-family="monospace" font-size="12" fill="#FF7040" opacity="0.15">∀u,v∈V: d(u,v) ≤ d(u,x) + d(x,v)</text>
-            <text x="0" y="145" font-family="monospace" font-size="12" fill="#FF7040" opacity="0.15">PageRank(u) = (1-d) + d ∑ PageRank(v)/L(v)</text>
-        </pattern>
+        <!-- Soft glowing light leaks -->
+        <radialGradient id="orangeGlow" cx="50%" cy="50%" r="50%" fx="50%" fy="50%">
+            <stop offset="0%" stop-color="#FF7040" stop-opacity="0.08" />
+            <stop offset="100%" stop-color="#FF7040" stop-opacity="0" />
+        </radialGradient>
+        
+        <radialGradient id="grayGlow" cx="50%" cy="50%" r="50%" fx="50%" fy="50%">
+            <stop offset="0%" stop-color="#A1A1AA" stop-opacity="0.05" />
+            <stop offset="100%" stop-color="#A1A1AA" stop-opacity="0" />
+        </radialGradient>
     </defs>
 
-    <!-- Background Grid -->
-    <rect width="100%" height="100%" fill="url(#grid)"/>
+    <!-- Base Grid -->
+    <rect width="100%" height="100%" fill="url(#premiumGrid)"/>
+
+    <!-- Ambient Glowing Orbs -->
+    <circle cx="80%" cy="20%" r="400" fill="url(#orangeGlow)" />
+    <circle cx="20%" cy="70%" r="500" fill="url(#grayGlow)" />
+    <circle cx="60%" cy="80%" r="300" fill="url(#orangeGlow)" opacity="0.5" />
+
+    <!-- Abstract Topography / Data Lines (Very thin and precise) -->
+    <path d="M-100,600 C300,600 400,200 800,200 C1100,200 1300,400 1600,400" stroke="#FF7040" stroke-width="1" opacity="0.4" fill="none">
+        <animate attributeName="stroke-dasharray" values="0, 2000; 2000, 0" dur="15s" repeatCount="indefinite"/>
+    </path>
     
-    <!-- Bitcoin Symbol Pattern -->
-    <rect width="100%" height="100%" fill="url(#btcPattern)"/>
+    <path d="M-100,650 C200,650 450,250 850,250 C1150,250 1250,450 1600,450" stroke="#A1A1AA" stroke-width="0.5" opacity="0.5" fill="none" />
 
-    <!-- Math Formula moved further right -->
-    <g class="math-formula" transform="translate(260, 60)">
-        <rect width="320" height="180" fill="url(#formulaPattern)" opacity="0.8"/>
-        
-        <!-- Highlight one formula with animation -->
-        <text x="0" y="95" font-family="monospace" font-size="12" fill="#FF7040" opacity="0.4">
-            G = (V, E, w)
-            <animate attributeName="opacity" values="0.4;0.8;0.4" dur="4s" repeatCount="indefinite"/>
-        </text>
-    </g>
-
-    <!-- Animated Data Flow Lines -->
-    <g class="data-flows">
-        <!-- Curved flow line 1 -->
-        <path d="M-100 300 C 200 100, 600 600, 1500 300" 
-              stroke="#FF7040" 
-              stroke-width="1.5"
-              opacity="0.1"
-              fill="none">
-            <animate attributeName="d" 
-                     dur="15s" 
-                     repeatCount="indefinite"
-                     values="M-100 300 C 200 100, 600 600, 1500 300;
-                            M-100 350 C 200 150, 600 550, 1500 350;
-                            M-100 300 C 200 100, 600 600, 1500 300"/>
-        </path>
-
-        <!-- Curved flow line 2 -->
-        <path d="M-50 500 C 300 300, 700 800, 1600 500" 
-              stroke="#FF8F66" 
-              stroke-width="1"
-              opacity="0.08"
-              fill="none">
-            <animate attributeName="d" 
-                     dur="20s" 
-                     repeatCount="indefinite"
-                     values="M-50 500 C 300 300, 700 800, 1600 500;
-                            M-50 450 C 300 250, 700 750, 1600 450;
-                            M-50 500 C 300 300, 700 800, 1600 500"/>
-        </path>
-        
-        <!-- Lightning data line -->
-        <path d="M1440 200 L1200 200 L1300 350 L1000 350 L1100 550 L800 550" 
-              stroke="#FF8F66" 
-              stroke-width="1.2"
-              opacity="0.1"
-              fill="none">
-            <animate attributeName="opacity" 
-                     values="0.05;0.15;0.05" 
-                     dur="4s" 
-                     repeatCount="indefinite"/>
-        </path>
-    </g>
-
-    <!-- Data Points -->
-    <g class="data-nodes">
+    <!-- Precise data nodes -->
+    <g opacity="0.8">
         <!-- Node 1 -->
-        <circle cx="20%" cy="30%" r="4" fill="#FF7040" opacity="0.6">
-            <animate attributeName="r" values="4;6;4" dur="3s" repeatCount="indefinite"/>
-            <animate attributeName="opacity" values="0.6;0.3;0.6" dur="3s" repeatCount="indefinite"/>
+        <circle cx="800" cy="200" r="3" fill="#FF7040" />
+        <circle cx="800" cy="200" r="10" stroke="#FF7040" stroke-width="0.5" fill="none">
+            <animate attributeName="r" values="3; 25; 3" dur="4s" repeatCount="indefinite" />
+            <animate attributeName="opacity" values="1; 0; 1" dur="4s" repeatCount="indefinite" />
         </circle>
-        
+
         <!-- Node 2 -->
-        <circle cx="65%" cy="45%" r="5" fill="#FF8F66" opacity="0.5">
-            <animate attributeName="r" values="5;7;5" dur="4s" repeatCount="indefinite"/>
-            <animate attributeName="opacity" values="0.5;0.2;0.5" dur="4s" repeatCount="indefinite"/>
+        <circle cx="1300" cy="400" r="2" fill="#A1A1AA" />
+        <circle cx="1300" cy="400" r="10" stroke="#A1A1AA" stroke-width="0.5" fill="none">
+            <animate attributeName="r" values="2; 15; 2" dur="3s" repeatCount="indefinite" />
+            <animate attributeName="opacity" values="0.8; 0; 0.8" dur="3s" repeatCount="indefinite" />
         </circle>
         
         <!-- Node 3 -->
-        <circle cx="80%" cy="20%" r="6" fill="#FF7040" opacity="0.4">
-            <animate attributeName="r" values="6;8;6" dur="5s" repeatCount="indefinite"/>
-            <animate attributeName="opacity" values="0.4;0.1;0.4" dur="5s" repeatCount="indefinite"/>
-        </circle>
-        
-        <!-- Node 4 -->
-        <circle cx="40%" cy="70%" r="5" fill="#FF7040" opacity="0.5">
-            <animate attributeName="r" values="5;7;5" dur="4.5s" repeatCount="indefinite"/>
-            <animate attributeName="opacity" values="0.5;0.2;0.5" dur="4.5s" repeatCount="indefinite"/>
-        </circle>
-        
-        <!-- Node 5 -->
-        <circle cx="75%" cy="65%" r="4" fill="#FF8F66" opacity="0.4">
-            <animate attributeName="r" values="4;6;4" dur="3.5s" repeatCount="indefinite"/>
-            <animate attributeName="opacity" values="0.4;0.1;0.4" dur="3.5s" repeatCount="indefinite"/>
-        </circle>
-        
-        <!-- Lightning network connection points -->
-        <circle cx="1200" cy="200" r="3" fill="#FF8F66" opacity="0.5">
-            <animate attributeName="r" values="3;5;3" dur="2s" repeatCount="indefinite"/>
-        </circle>
-        <circle cx="1300" cy="350" r="3" fill="#FF8F66" opacity="0.5">
-            <animate attributeName="r" values="3;5;3" dur="2s" repeatCount="indefinite"/>
-        </circle>
-        <circle cx="1000" cy="350" r="3" fill="#FF8F66" opacity="0.5">
-            <animate attributeName="r" values="3;5;3" dur="2s" repeatCount="indefinite"/>
-        </circle>
-        <circle cx="1100" cy="550" r="3" fill="#FF8F66" opacity="0.5">
-            <animate attributeName="r" values="3;5;3" dur="2s" repeatCount="indefinite"/>
-        </circle>
-        <circle cx="800" cy="550" r="3" fill="#FF8F66" opacity="0.5">
-            <animate attributeName="r" values="3;5;3" dur="2s" repeatCount="indefinite"/>
-        </circle>
-    </g>
-
-    <!-- Network hexagons -->
-    <g class="network-shapes">
-        <path d="M700 200 L750 225 L750 275 L700 300 L650 275 L650 225 Z" 
-              fill="url(#nodeGlow)" 
-              opacity="0.1">
-            <animate attributeName="opacity" 
-                     values="0.1;0.2;0.1" 
-                     dur="6s" 
-                     repeatCount="indefinite"/>
-        </path>
-        
-        <path d="M900 400 L940 420 L940 460 L900 480 L860 460 L860 420 Z" 
-              fill="url(#nodeGlow)" 
-              opacity="0.08">
-            <animate attributeName="opacity" 
-                     values="0.08;0.16;0.08" 
-                     dur="8s" 
-                     repeatCount="indefinite"/>
-        </path>
-        
-        <path d="M500 500 L540 520 L540 560 L500 580 L460 560 L460 520 Z" 
-              fill="url(#nodeGlow)" 
-              opacity="0.1">
-            <animate attributeName="opacity" 
-                     values="0.1;0.18;0.1" 
-                     dur="7s" 
-                     repeatCount="indefinite"/>
-        </path>
-    </g>
-    
-    <!-- Data Analysis Elements -->
-    <g class="data-analysis">
-        <!-- Line chart effect -->
-        <polyline points="100,600 140,580 180,590 220,560 260,570 300,550 340,530 380,540 420,510" 
-                 stroke="#FF7040" 
-                 stroke-width="1" 
-                 fill="none" 
-                 opacity="0.15"/>
-                 
-        <!-- Bar chart effect -->
-        <rect x="800" y="650" width="10" height="30" fill="#FF7040" opacity="0.1"/>
-        <rect x="820" y="640" width="10" height="40" fill="#FF7040" opacity="0.1"/>
-        <rect x="840" y="630" width="10" height="50" fill="#FF7040" opacity="0.1"/>
-        <rect x="860" y="650" width="10" height="30" fill="#FF7040" opacity="0.1"/>
-        <rect x="880" y="620" width="10" height="60" fill="#FF7040" opacity="0.1"/>
+        <circle cx="400" cy="420" r="2" fill="#A1A1AA" />
     </g>
 </svg>

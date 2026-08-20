@@ -20,7 +20,7 @@ const ANIMATION_CONFIG = {
 function initializeAnimations() {
     // Register ScrollTrigger plugin
     gsap.registerPlugin(ScrollTrigger);
-    
+
     // Batch similar animations
     const heroElements = [
         '.hero-content h1',
@@ -51,7 +51,13 @@ function initializeAnimations() {
             y: 20,
             opacity: 0,
             duration: ANIMATION_CONFIG.duration.short
-        }, "-=0.3");
+        }, "-=0.3")
+        .from('.hero-card', {
+            y: 20,
+            opacity: 0,
+            duration: ANIMATION_CONFIG.duration.medium,
+            stagger: 0.1
+        }, "-=0.2");
 
     // Initialize other animations
     initializeProductAnimations();
@@ -139,6 +145,21 @@ function initializeProductAnimations() {
         start: "top 85%"
     });
 
+    // Terminal mockup type-in animation
+    gsap.utils.toArray('.terminal-mockup').forEach(terminal => {
+        const lines = terminal.querySelectorAll('.mockup-body p');
+        ScrollTrigger.create({
+            trigger: terminal,
+            start: "top 85%",
+            onEnter: () => {
+                gsap.fromTo(lines, 
+                    { opacity: 0, y: 10 },
+                    { opacity: 1, y: 0, duration: 0.2, stagger: 0.2, ease: "power2.out" }
+                );
+            }
+        });
+    });
+
     // Optimize SVG animations
     gsap.utils.toArray('.section-animation').forEach(animation => {
         gsap.set(animation, { willChange: "transform" });
@@ -184,7 +205,7 @@ function setupScrollAnimations() {
 // Optimized reduced motion handling
 function setupReducedMotion() {
     const mediaQuery = window.matchMedia('(prefers-reduced-motion: reduce)');
-    
+
     function updateAnimationPreference(event) {
         if (event.matches) {
             // Disable animations
@@ -196,7 +217,7 @@ function setupReducedMotion() {
             ScrollTrigger.defaults({ disable: false });
         }
     }
-    
+
     mediaQuery.addEventListener('change', updateAnimationPreference);
     updateAnimationPreference(mediaQuery);
 }
